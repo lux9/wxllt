@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
-  resources :pics, only: :create
+  resources :pics, only: [:create, :destroy]
   resources :backgrounds, only: [:create]
   delete "destroy_all_posts", to: "pics#destroy_all_posts"
   delete "destroy_background", to: "backgrounds#destroy_background"

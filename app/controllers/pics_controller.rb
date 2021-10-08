@@ -6,6 +6,12 @@ class PicsController < ApplicationController
     redirect_to root_path(errors: pic.errors.full_messages)
   end
 
+  def destroy
+    pic = Pic.find(params["id"])
+    pic.destroy
+    redirect_to root_path
+  end
+
   def destroy_all_posts
     Pic.destroy_all
     redirect_to root_path
