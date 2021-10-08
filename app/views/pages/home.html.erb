@@ -29,15 +29,17 @@
 
 <div class="container">
 
-  <%= simple_form_for(Pic.new) do |f| %>
-    <!-- [...] -->
-    <%= f.input :title %>
-    <div class="d-flex justify-content-around align-items-center">
-      <%= f.input :photo, as: :file %>
-      <%= f.submit "Add Pic", :class => "btn btn-primary btn-size" %>
-    </div>
-    <!-- [...] -->
-  <% end %>
+  <div class="form-container">
+    <%= simple_form_for(Pic.new) do |f| %>
+      <!-- [...] -->
+      <%= f.input :title %>
+      <div class="d-flex justify-content-around align-items-center">
+        <%= f.input :photo, as: :file %>
+        <%= f.submit "Add Pic", :class => "btn btn-primary btn-size" %>
+      </div>
+      <!-- [...] -->
+    <% end %>
+  </div>
 
   <!-- <div class="row mt-5"> -->
 
