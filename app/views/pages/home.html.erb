@@ -73,6 +73,7 @@
         <!-- [...] -->
     <div class="d-flex justify-content-around align-items-center">
       <%= f.input :photo, as: :file, label: false %>
+      <%= f.hidden_field :img %>
       <%= f.submit "set back", :class => "btn btn-primary btn-size" %>
       <%= link_to "clear", destroy_background_path, :class => "clear-btn btn btn-danger btn-size", method: "delete" %>
     </div>
