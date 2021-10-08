@@ -33,7 +33,7 @@
       <!-- [...] -->
       <%= f.input :title %>
       <div class="d-flex justify-content-around align-items-center">
-        <%= f.input :photo, as: :file %>
+        <%= f.input :photo, as: :file, label: false %>
         <%= f.submit "Create", :class => "btn btn-primary btn-size" %>
       </div>
     <% if @errors %>
@@ -65,5 +65,18 @@
     <% end %>
   </div>
   <!-- </div> -->
+
+</div>
+
+<div class="my-form">
+  <%= simple_form_for(@background) do |f| %>
+        <!-- [...] -->
+    <div class="d-flex justify-content-around align-items-center">
+      <%= f.input :photo, as: :file, label: false %>
+      <%= f.submit "set back", :class => "btn btn-primary btn-size" %>
+      <%= link_to "clear", destroy_background_path, :class => "clear-btn btn btn-danger btn-size", method: "delete" %>
+    </div>
+        <!-- [...] -->
+  <% end %>
 
 </div>

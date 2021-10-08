@@ -11,7 +11,7 @@
 
   </head>
 
-  <body>
+  <body style="background-image: url(<%= cl_image_path Background.last.photo.key if Background.last %>);">
     <%= yield %>
   </body>
 </html>
