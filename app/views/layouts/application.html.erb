@@ -12,7 +12,7 @@
 
   </head>
 
-  <body style="background-image: url(<%= cl_image_path Background.last.photo.key if Background.last %>);">
+  <body style="<% if Background.last %>background-image: url(<%= cl_image_path Background.last.photo.key %>;<% else %> background-color: rgb(247,247,247) <% end %>;">
     <%= yield %>
   </body>
 </html>
