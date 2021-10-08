@@ -1,12 +1,32 @@
-<h1><%= @title %></h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+    <img src="/images/panda.jpg" />
 
-<%= simple_form_for(Article.new) do |f| %>
-  <!-- [...] -->
-  <%= f.input :photo, as: :file %>
-  <!-- [...] -->
-<% end %>
+<div class="container">
 
-<% Article.all.each do |article| %>
-  <%= cl_image_tag article.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+  <%= simple_form_for(Pic.new) do |f| %>
+    <!-- [...] -->
+    <%= f.input :title %>
+    <div class="d-flex justify-content-around">
+      <%= f.input :photo, as: :file %>
+      <%= f.submit "Add Pic" %>
+    </div>
+    <!-- [...] -->
+  <% end %>
+
+  <!-- <div class="row mt-5"> -->
+
+    <% Pic.all.each do |pic| %>
+
+
+    <div class="card-product mt-5">
+      <img src="<%= cl_image_path pic.photo.key %>" />
+      <div class="card-product-infos">
+        <h2><%= pic.title %></h2>
+        <!-- <p>Product description with <strong>relevant info</strong> only.</p> -->
+      </div>
+    </div>
+
+
+    <% end %>
+  <!-- </div> -->
+
+</div>
