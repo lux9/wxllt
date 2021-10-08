@@ -32,9 +32,9 @@
   <%= simple_form_for(Pic.new) do |f| %>
     <!-- [...] -->
     <%= f.input :title %>
-    <div class="d-flex justify-content-around">
+    <div class="d-flex justify-content-around align-items-center">
       <%= f.input :photo, as: :file %>
-      <%= f.submit "Add Pic" %>
+      <%= f.submit "Add Pic", :class => "btn btn-primary btn-size" %>
     </div>
     <!-- [...] -->
   <% end %>
