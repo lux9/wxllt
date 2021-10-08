@@ -1,3 +1,12 @@
 <h1><%= @title %></h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
+<%= simple_form_for(Article.new) do |f| %>
+  <!-- [...] -->
+  <%= f.input :photo, as: :file %>
+  <!-- [...] -->
+<% end %>
+
+<% Article.all.each do |article| %>
+  <%= cl_image_tag article.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
