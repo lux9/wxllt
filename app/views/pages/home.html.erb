@@ -10,9 +10,8 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Home", "#", class: "nav-link" %>
-      </li>
+      <%= link_to "X", destroy_all_posts_path, :class => "btn btn-danger btn-size", method: "delete" %>
+
       <li class="nav-item">
         <%= link_to "Messages", "#", class: "nav-link" %>
       </li>
@@ -46,12 +45,7 @@
     <% end %>
   </div>
 
-  <div class="options-group row">
-    <div class="col-4">
-      <%= link_to "Delete All", destroy_all_posts_path, :class => "btn btn-danger btn-size", method: "delete" %>
-    </div>
 
-  </div>
 
   <!-- <div class="row mt-5"> -->
   <div class="cards-container">
