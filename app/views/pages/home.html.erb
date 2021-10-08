@@ -30,7 +30,11 @@
   <div class="form-container">
     <%= simple_form_for(Pic.new) do |f| %>
       <!-- [...] -->
-      <%= f.input :title %>
+
+      <div class="first-info d-flex">
+        <%= f.input :title %>
+        <%= f.input :comment %>
+      </div>
       <div class="d-flex justify-content-around align-items-center">
         <%= f.input :photo, as: :file, label: false %>
         <%= f.submit "Create", :class => "btn btn-primary btn-size" %>
@@ -56,7 +60,7 @@
       <img src="<%= cl_image_path pic.photo.key %>" />
       <div class="card-product-infos">
         <h2><%= pic.title %></h2>
-        <!-- <p>Product description with <strong>relevant info</strong> only.</p> -->
+        <p><%= pic.comment %></p>
       </div>
     </div>
     <div class="text-right pic-delete">
